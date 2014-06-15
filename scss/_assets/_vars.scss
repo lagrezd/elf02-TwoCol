@@ -1,0 +1,45 @@
+/*
+    Asset: Vars
+*/
+
+// Colors
+$color__white: #fff;
+$color__red: #da4d4d;
+$color__grey: #5b5b5b;
+$color__grey--soft: #c3c3c3;
+$color__grey--light: #f7f7f7;
+
+$color__dark: #333;
+$color__dark--soft: #777;
+
+
+// Layout
+$wrap__max-width: 900px;
+
+
+// Typo
+$size__h1: 50;
+$size__h2: 30;
+$size__h3: 24;
+$size__h4: 20;
+$size__h5: 16;
+$size__h6: 14;
+
+$size__xl: 96;
+$size__l:  36;
+$size__m:  17;
+$size__s:  16;
+$size__xs: 14;
+
+$weight__bold: 400;
+$weight__norm: 300;
+
+$base__font-size: 16px;
+$base__line-height: 1.5;
+$base__spacing: $base__font-size * $base__line-height;
+$base__spacing--half: $base__spacing / 2;
+
+
+// Grid
+$grid: base-12;
+$grid__padding: 0;

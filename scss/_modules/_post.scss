@@ -1,0 +1,123 @@
+/*
+    Module: Post
+*/
+
+.post {
+    @include font-size($size__m);
+    color: $color__grey;
+    margin-bottom: $base__spacing * 6;
+
+    &:last-of-type {
+        margin-bottom: $base__spacing * 5;
+    }
+
+    a {
+        color: $color__red;
+
+        &:hover {
+            color: $color__grey;
+        }
+    }
+
+    .nm {
+        margin-bottom: 0;
+    }
+
+    > figure {
+        box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, .4);
+    }
+
+    > pre {
+        tab-size: 4;
+        background-color: $color__dark;
+        color: $color__grey--soft;
+        padding: 5px 10px;
+        border-radius: 4px;
+
+        &,
+        > code {
+            @include font-size($size__xs);
+        }
+    }
+
+
+    > blockquote {
+        @include font-size($size__s);
+        background-color: $color__grey--light;
+        padding: 5px 10px;
+        border-left: 4px solid $color__red;
+    }
+
+    .more-link {
+        @extend %btn;
+        @include font-size($size__xs);
+        margin-top: $base__spacing--half;
+        border-radius: 4px;
+        background-color: $color__red;
+        color: $color__white;
+
+        &:hover {
+            background-color: $color__grey;
+            color: $color__grey--soft;
+        }
+    }
+
+    &__title {
+        @include header-font();
+        text-align: center;
+        margin-bottom: $base__spacing--half;
+        color: $color__grey;
+
+        a {
+            color: $color__grey;
+
+            &:hover {
+                color: $color__red;
+            }
+        }
+
+        .page & {
+            margin-bottom: $base__spacing;
+        }
+    }
+
+    &__time {
+        @include font-size($size__s);
+        font-weight: $weight__bold;
+        display: block;
+        text-align: center;
+        margin-bottom: $base__spacing;
+        color: $color__grey--soft;
+    }
+
+    @include breakpoint(bp-1) {
+        margin-bottom: $base__spacing * 5;
+    }
+
+    @include breakpoint(bp-2) {
+        > figure {
+            margin-left: -140px;
+        }
+    }
+
+    @include breakpoint(bp-3) {
+        @include font-size($size__s);
+
+        &__title {
+            @include font-size($size__h1 / 1.2);
+        }
+
+        &__time {
+            @include font-size($size__xs);
+        }
+
+        > h2 {
+            @include font-size($size__h2 / 1.2);
+        }
+
+        > h3 {
+            @include font-size($size__h3 / 1.2);
+        }
+
+    }
+}

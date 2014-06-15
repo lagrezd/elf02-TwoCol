@@ -1,0 +1,28 @@
+/*
+    Module: Pagination
+*/
+
+.page-pagination {
+    @include font-size($size__s);
+    margin-bottom: $base__spacing * 2;
+    text-align: center;
+    color: $color__grey;
+
+    .current {
+        @include font-size($size__m);
+        font-weight: $weight__bold;
+    }
+
+    .page-numbers {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    a {
+        color: $color__grey;
+
+        &:hover {
+            color: $color__red;
+        }
+    }
+}

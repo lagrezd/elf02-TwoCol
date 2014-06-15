@@ -1,0 +1,34 @@
+/*
+    Module: Footer
+*/
+
+.page-footer {
+    @include font-size($size__xs);
+    background-color: $color__dark;
+    color: $color__dark--soft;
+
+    a {
+        color: $color__dark--soft;
+
+        &:hover {
+            color: $color__red;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        margin-bottom: $base__spacing--half / 2;
+
+        &__item {
+            + li:before {
+                content: '|';
+                margin-right: 4px;
+                margin-left: 4px;
+                color: $color__grey;
+            }
+        }
+    }
+}

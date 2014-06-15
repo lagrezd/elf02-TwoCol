@@ -1,0 +1,81 @@
+/*
+    Asset: Reset
+*/
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    line-height: $base__line-height;
+    overflow-y: scroll;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+em {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    background: transparent;
+
+    &:active,
+    &:hover,
+    a:focus {
+        outline: 0;
+    }
+}
+
+input,
+button,
+select,
+textarea,
+option,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    border: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

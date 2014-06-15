@@ -1,0 +1,16 @@
+/*
+    Module: Base
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    @include base-font();
+    font-weight: $weight__norm;
+    color: $color__grey;
+    background-color: $color__white;
+    border-top: 8px solid $color__red;
+}

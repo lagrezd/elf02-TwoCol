@@ -1,0 +1,117 @@
+/*
+    Asset: Collection
+*/
+
+.wrap {
+    max-width: $wrap__max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $base__spacing--half;
+}
+
+a {
+    text-decoration: none;
+    transition: all .2s ease-out;
+
+    &:active,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.error {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+
+::selection {
+    color: $color__white;
+    background: $color__red;
+}
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre,
+.fv {
+    margin-bottom: $base__spacing;
+}
+
+hr {
+    margin-bottom: $base__spacing - 2;
+}
+
+ul,
+ol,
+dd {
+    margin-left: $base__spacing;
+}
+
+pre {
+    word-break: normal;
+    hyphens: none;
+    white-space: pre;
+    word-spacing: normal;
+    direction: ltr;
+    overflow: auto;
+
+    &,
+    > code {
+        font-family: Menlo, Monaco, monospace;
+    }
+}
+
+blockquote {
+
+    > p {
+        margin-bottom: 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+    figure & {
+        display: block;
+        margin-bottom: 0;
+    }
+}
+
+.fv {
+    position: relative;
+    padding-bottom: 55%;
+    padding-top: 15px;
+    height: 0;
+    overflow: hidden;
+    > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.alignleft {
+    float: left;
+    margin-right: $base__spacing;
+    margin-bottom: $base__spacing--half;
+}
+
+.alignright {
+    float: right;
+    margin-left: $base__spacing;
+    margin-bottom: $base__spacing--half;
+}
+
+.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: $base__spacing--half;
+}

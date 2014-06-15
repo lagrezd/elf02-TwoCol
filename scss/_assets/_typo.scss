@@ -1,0 +1,45 @@
+/*
+    Asset: Typo
+*/
+
+h1 {
+    @include font-size($size__h1, 1.2);
+    font-weight: $weight__bold;
+}
+
+h2 {
+    @include font-size($size__h2, 1.2);
+    font-weight: $weight__bold;
+}
+
+h3 {
+    @include font-size($size__h3, 1.2);
+    font-weight: $weight__bold;
+}
+
+h4 {
+    @include font-size($size__h4, 1.2);
+    font-weight: $weight__bold;
+}
+
+h5 {
+    @include font-size($size__h5, 1.2);
+    font-weight: $weight__bold;
+}
+
+h6 {
+    @include font-size($size__h6, 1.2);
+    font-weight: $weight__bold;
+}
+
+b,
+strong {
+    font-weight: $weight__bold;
+}
+
+p,
+h1,
+h2,
+h3 {
+    -webkit-text-stroke: .5px;
+}

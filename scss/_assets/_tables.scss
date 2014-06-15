@@ -1,0 +1,38 @@
+/*
+    Asset: Tables
+*/
+
+.table,
+%table {
+    width: 100%;
+
+    th,
+    td {
+        padding: $base__spacing / 4;
+        text-align: left;
+        border-top: 1px solid #ddd;
+    }
+
+    > thead > tr:first-child > th {
+        border: 0;
+    }
+
+    .num {
+        text-align: right;
+    }
+
+    [colspan] {
+        text-align: center;
+    }
+
+    [rowspan] {
+        vertical-align: middle;
+    }
+
+    &--striped {
+
+        > tbody > tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+    }
+}

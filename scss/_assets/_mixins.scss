@@ -1,0 +1,55 @@
+/*
+    Asset: Mixins, Extends
+*/
+
+@mixin base-font() {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@mixin header-font() {
+    font-family: 'Alegreya', serif;
+}
+
+@mixin font-size($size, $line: 0) {
+    font-size: ($size) + px;
+    font-size: ($size / 16) + rem;
+    @if $line != 0 {
+        line-height: $line;
+    }
+}
+
+@mixin breakpoint($point) {
+    @if $point == bp-1 {
+        @media (max-width: 800px) { @content; }
+    }
+    @else if $point == bp-2 {
+        @media (min-width: 1200px) { @content; }
+    }
+    @else if $point == bp-3 {
+        @media (min-width: 320px) and (max-width: 568px) { @content; }
+    }
+    @else if $point == bp-retina {
+        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (-o-min-device-pixel-ratio: 5/4) { @content; }
+    }
+}
+
+//  @extend %clearfix;
+%clearfix {
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+//  @extend %hide-text;
+%hide-text {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}

@@ -1,0 +1,42 @@
+/*
+    Asset: Nav
+*/
+
+.nav,
+%nav {
+    list-style: none;
+    margin-left: 0;
+
+    > li {
+
+        &,
+        > a {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+        }
+    }
+
+    &--stacked {
+
+        > li {
+            display: list-item;
+
+            > a {
+                display: block;
+            }
+        }
+    }
+
+    &--fit {
+        width: 100%;
+
+        > li {
+            display: block;
+
+            > a {
+                display: block;
+            }
+        }
+    }
+}
