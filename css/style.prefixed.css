@@ -603,8 +603,8 @@ body {
 .page-main {
   padding-top: 72px;
   min-height: 100%;
-  min-height: -webkit-calc(100% - 96px);
-  min-height: calc(100% - 96px);
+  min-height: -webkit-calc(100% - 72px);
+  min-height: calc(100% - 72px);
 }
 @media (max-width: 800px) {
   .page-main {
