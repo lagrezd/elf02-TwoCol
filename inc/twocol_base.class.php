@@ -95,7 +95,7 @@
             );
             wp_enqueue_style('gf');
 
-            // elf02 css
+            // TwoCol css
             wp_register_style(
                 'twocol',
                 self::template_uri('/css/style.min.css'),
@@ -119,7 +119,7 @@
                 wp_enqueue_script('jquery');
             }
 
-            // elf02.js
+            // TwoCol js
             wp_register_script(
                 'twocol',
                 self::template_uri('/js/scripts.min.js'),
