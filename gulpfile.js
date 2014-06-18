@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('js', function() {
-    gulp.src(['./js/scripts.js', './js/*/*.js'])
+    gulp.src(['./js/*/*.js', './js/scripts.js'])
         // concat
         .pipe(concat('scripts.concat.js'))
         .pipe(gulp.dest('./dist'))
