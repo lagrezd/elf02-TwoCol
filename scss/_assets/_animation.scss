@@ -2,8 +2,7 @@
     Asset: Animation
 */
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes logo {
+    from { background-position: -1800px; }
+    to { background-position: 0; }
 }

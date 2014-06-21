@@ -4,7 +4,7 @@
     </figure>
     <p>
         Mein Name ist <strong>Christopher</strong>.
-        Ich bin <strong>Webentwickler</strong> und Kaffee Enthusiast. Ich
+        Ich bin <strong><span data-tooltip="HTML5 • CSS3 • PHP • JS • WordPress • Magento">Webentwickler</span></strong> und Kaffee Enthusiast. Ich
         <a href="https://twitter.com/_elf02"><strong>tweete</strong></a>,
         <a href="https://github.com/elf02"><strong>teile</strong></a>,
         <?php twocol_base::link('category/handgemacht', '<strong>entwickle</strong>'); ?> und

@@ -1,5 +1,8 @@
 <?php
 
+    defined('ABSPATH') OR exit;
+
+
     final class twocol_base {
 
         /**

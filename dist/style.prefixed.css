@@ -63,30 +63,18 @@ table {
 /*
     Asset: Animation
 */
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1); }
+@-webkit-keyframes logo {
+  from {
+    background-position: -1800px; }
 
-  50% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
+  to {
+    background-position: 0; } }
+@keyframes logo {
+  from {
+    background-position: -1800px; }
 
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-
-  50% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
+  to {
+    background-position: 0; } }
 
 /*
     Asset: Typo
@@ -433,6 +421,39 @@ img {
   margin-left: auto;
   margin-bottom: 12px; }
 
+[data-tooltip] {
+  position: relative; }
+  [data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.5em;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1;
+    white-space: nowrap;
+    background-color: transparent;
+    color: transparent;
+    opacity: 0;
+    box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.4);
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0); }
+  [data-tooltip]:hover:before {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    -webkit-transform: translate(-50%, -150%) scale(1);
+    -ms-transform: translate(-50%, -150%) scale(1);
+    transform: translate(-50%, -150%) scale(1);
+    background-color: #da4d4d;
+    color: #fff;
+    opacity: 1; }
+
 /*
     Module: Base
 */
@@ -495,22 +516,26 @@ body {
       color: #5b5b5b; }
   .page-info__logo {
     background-image: url(../img/logo.jpg);
+    background-position: -1680px;
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-size: 100%;
     margin-bottom: 12px;
     border: 4px solid #fff;
     box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.4);
-    -webkit-animation: 1s pulse linear;
-    animation: 1s pulse linear; }
+    -webkit-animation: logo 0.8s 1s steps(15, start) 1 forwards;
+    animation: logo 0.8s 1s steps(15, start) 1 forwards; }
     .page-info__logo > a {
       display: block;
       width: 100%;
       height: 100%; }
     @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (-o-min-device-pixel-ratio: 5/4) {
       .page-info__logo {
-        background-image: url(../img/logo@x2.jpg); } }
+        background-image: url(../img/logo--2x.jpg);
+        background-size: auto 120px; } }
+  .page-info [data-tooltip] {
+    color: #da4d4d;
+    cursor: help; }
   @media (max-width: 800px) {
     .page-info {
       margin-bottom: 72px; }
