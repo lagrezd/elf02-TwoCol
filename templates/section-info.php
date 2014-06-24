@@ -6,8 +6,9 @@
         Mein Name ist <strong>Christopher</strong>.
         Ich bin <strong><span data-tooltip="HTML5 • CSS3 • PHP • JS • WordPress • Magento">Webentwickler</span></strong> und Kaffee-Nerd. Ich
         <a href="https://twitter.com/_elf02"><strong>tweete</strong></a>,
-        <a href="https://github.com/elf02"><strong>teile</strong></a> und
-        <?php twocol_base::link('category/handgemacht', '<strong>entwickle</strong>'); ?>.
+        <a href="https://github.com/elf02"><strong>teile</strong></a>,
+        <?php twocol_base::link('category/handgemacht', '<strong>entwickle</strong>'); ?> und
+        <?php twocol_base::link('category/bilder', '<strong>fotografiere</strong>'); ?>.
         Kontakt, auch Freelance Anfragen, gerne über
         <a href="mailto:chris@elf02.de"><strong>E-Mail</strong></a>.
         Einen <strong>schönen <?php twocol_base::get_day(); ?> allerseits!</strong>
