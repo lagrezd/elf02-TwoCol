@@ -6,10 +6,6 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-@mixin header-font() {
-    font-family: 'Alegreya', serif;
-}
-
 @mixin font-size($size, $line: 0) {
     font-size: ($size) + px;
     font-size: ($size / 16) + rem;

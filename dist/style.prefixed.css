@@ -80,8 +80,8 @@ table {
     Asset: Typo
 */
 h1 {
-  font-size: 50px;
-  font-size: 3.125rem;
+  font-size: 48px;
+  font-size: 3rem;
   line-height: 1.2;
   font-weight: 400; }
 
@@ -564,6 +564,8 @@ body {
       margin-right: 4px;
       margin-left: 4px;
       color: #5b5b5b; }
+    .page-footer .nav__item a {
+      margin-right: -4px; }
 
 /*
     Module: Post
@@ -610,7 +612,6 @@ body {
       background-color: #5b5b5b;
       color: #c3c3c3; }
   .post__title {
-    font-family: 'Alegreya', serif;
     text-align: center;
     margin-bottom: 12px;
     color: #5b5b5b; }
@@ -623,7 +624,6 @@ body {
   .post__time {
     font-size: 16px;
     font-size: 1rem;
-    font-weight: 400;
     display: block;
     text-align: center;
     margin-bottom: 24px;
@@ -639,8 +639,8 @@ body {
       font-size: 16px;
       font-size: 1rem; }
       .post__title {
-        font-size: 41.66667px;
-        font-size: 2.60417rem; }
+        font-size: 40px;
+        font-size: 2.5rem; }
       .post__time {
         font-size: 14px;
         font-size: 0.875rem; }

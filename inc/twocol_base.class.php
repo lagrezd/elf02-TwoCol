@@ -91,7 +91,7 @@
             // google font css
             wp_register_style(
                 'gf',
-                'http://fonts.googleapis.com/css?family=Ubuntu:400,300|Alegreya:400',
+                'http://fonts.googleapis.com/css?family=Ubuntu:400,300',
                 array(),
                 null,
                 'all'
