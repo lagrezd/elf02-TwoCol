@@ -1,5 +1,14 @@
 <?php
 
+    require_once(
+        sprintf(
+            '%s/inc/%s.class.php',
+            dirname(__FILE__),
+            'twocol_base'
+        )
+    );
+
+
     add_action(
         'init',
         array(
@@ -7,20 +16,5 @@
             'instance'
         )
     );
-
-
-    spl_autoload_register('twocol_autoload');
-
-    function twocol_autoload($class) {
-        if(substr($class, 0, 7) === 'twocol_') {
-            require_once(
-                sprintf(
-                    '%s/inc/%s.class.php',
-                    dirname(__FILE__),
-                    strtolower($class)
-                )
-            );
-        }
-    }
 
 ?>
