@@ -40,7 +40,6 @@
         }
     }
 
-
     > blockquote {
         @include font-size($size__s);
         background-color: $color__grey--light;
@@ -50,8 +49,9 @@
 
     .more-link {
         @extend %btn;
-        @include font-size($size__xs);
+        @include font-size($size__xs - 1);
         margin-top: $base__spacing--half;
+        padding: .5em .8em;
         border-radius: 4px;
         background-color: $color__red;
         color: $color__white;
@@ -59,33 +59,8 @@
         &:hover {
             background-color: $color__grey;
             color: $color__grey--soft;
+            transform: translateX(10px);
         }
-    }
-
-    &__title {
-        text-align: center;
-        margin-bottom: $base__spacing--half;
-        color: $color__grey;
-
-        a {
-            color: $color__grey;
-
-            &:hover {
-                color: $color__red;
-            }
-        }
-
-        .page & {
-            margin-bottom: $base__spacing;
-        }
-    }
-
-    &__time {
-        @include font-size($size__s);
-        display: block;
-        text-align: center;
-        margin-bottom: $base__spacing;
-        color: $color__grey--soft;
     }
 
     @include breakpoint(bp-1) {
@@ -101,14 +76,6 @@
     @include breakpoint(bp-3) {
         @include font-size($size__s);
 
-        &__title {
-            @include font-size($size__h1 / 1.2);
-        }
-
-        &__time {
-            @include font-size($size__xs);
-        }
-
         > h2 {
             @include font-size($size__h2 / 1.2);
         }
@@ -117,5 +84,39 @@
             @include font-size($size__h3 / 1.2);
         }
 
+    }
+}
+
+.post__title {
+    text-align: center;
+    margin-bottom: $base__spacing--half;
+    color: $color__grey;
+
+    a {
+        color: $color__grey;
+
+        &:hover {
+            color: $color__red;
+        }
+    }
+
+    .page & {
+        margin-bottom: $base__spacing;
+    }
+
+    @include breakpoint(bp-3) {
+        @include font-size($size__h1 / 1.2);
+    }
+}
+
+.post__time {
+    @include font-size($size__s);
+    display: block;
+    text-align: center;
+    margin-bottom: $base__spacing;
+    color: $color__grey--soft;
+
+    @include breakpoint(bp-3) {
+        @include font-size($size__xs);
     }
 }

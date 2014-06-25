@@ -16,27 +16,29 @@
             zoom: 1;
         }
     }
+}
 
-    &--stacked {
+.nav--stacked,
+%nav--stacked {
 
-        > li {
-            display: list-item;
+    > li {
+        display: list-item;
 
-            > a {
-                display: block;
-            }
+        > a {
+            display: block;
         }
     }
+}
 
-    &--fit {
-        width: 100%;
+.nav--fit,
+%nav--fit {
+    width: 100%;
 
-        > li {
+    > li {
+        display: block;
+
+        > a {
             display: block;
-
-            > a {
-                display: block;
-            }
         }
     }
 }

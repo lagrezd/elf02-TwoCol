@@ -7,10 +7,6 @@
     min-height: 100%;
     min-height: calc(100% - #{$base__spacing * 3});
 
-    &__left {}
-
-    &__right {}
-
     @include breakpoint(bp-1) {
         padding-top: $base__spacing * 2;
 
@@ -23,3 +19,6 @@
         }
     }
 }
+
+.page-main__left {}
+.page-main__right {}

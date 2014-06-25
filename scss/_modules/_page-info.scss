@@ -13,30 +13,6 @@
         }
     }
 
-    &__logo {
-        background-image: url(../img/logo.jpg);
-        background-position: -1680px;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        margin-bottom: $base__spacing--half;
-        border: 4px solid $color__white;
-        box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, .4);
-        animation: logo .8s 1s steps(15, start) 1 forwards;
-
-        > a {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        @include breakpoint(bp-retina) {
-            background-image: url(../img/logo--2x.jpg);
-            background-size: auto 120px;
-        }
-
-    }
-
     [data-tooltip] {
         color: $color__red;
         cursor: help;
@@ -44,10 +20,33 @@
 
     @include breakpoint(bp-1) {
         margin-bottom: $base__spacing * 3;
+    }
+}
 
-        &__logo {
-            margin-left: auto;
-            margin-right: auto;
-        }
+.page-info__logo {
+    background-image: url(../img/logo.jpg);
+    background-position: -1680px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: $base__spacing--half;
+    border: 4px solid $color__white;
+    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, .4);
+    animation: logo .8s 1s steps(15, start) 1 forwards;
+
+    > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include breakpoint(bp-retina) {
+        background-image: url(../img/logo--2x.jpg);
+        background-size: auto 120px;
+    }
+
+    @include breakpoint(bp-1) {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
