@@ -368,7 +368,10 @@ img {
   height: auto; }
   figure img {
     display: block;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto; }
 
 .fv {
   position: relative;
@@ -563,6 +566,8 @@ body {
     margin-bottom: 0; }
   .post > figure {
     box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.4); }
+    .post > figure.no-shadow {
+      box-shadow: none; }
   .post > pre {
     -moz-tab-size: 4;
     tab-size: 4;
