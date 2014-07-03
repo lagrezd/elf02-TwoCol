@@ -22,17 +22,17 @@ gulp.task('sass', function() {
                 return notify().write('sass: ' + err);
             }
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./assets/css'))
 
         // autoprefixer
         .pipe(rename('style.prefixed.css'))
         .pipe(autoprefixer('last 2 version', 'ie 9'))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./assets/css'))
 
         // cssmin
         .pipe(rename('style.min.css'))
         .pipe(cssmin())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./assets/css'));
 });
 
 
@@ -53,7 +53,7 @@ gulp.task('js', function() {
 
         // concat
         .pipe(concat('scripts.concat.js'))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./assets/js'))
 
         // uglify
         .pipe(rename('scripts.min.js'))
@@ -63,7 +63,7 @@ gulp.task('js', function() {
             notify().write('uglify: ' + e.message);
             return this.end()
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./assets/js'));
 });
 
 

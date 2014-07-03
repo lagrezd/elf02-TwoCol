@@ -101,7 +101,7 @@
             // TwoCol css
             wp_register_style(
                 'twocol',
-                self::template_uri('/dist/style.min.css'),
+                self::template_uri('assets/css/style.min.css'),
                 array(),
                 null,
                 'all'
@@ -125,7 +125,7 @@
             // TwoCol js
             wp_register_script(
                 'twocol',
-                self::template_uri('dist/scripts.min.js'),
+                self::template_uri('assets/js/scripts.min.js'),
                 array(),
                 null,
                 true

@@ -8,8 +8,8 @@
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//platform.twitter.com">
-    <link rel="shortcut icon" href="<?php echo twocol_base::template_uri('/img/favicon.png'); ?>" type="image/png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo twocol_base::template_uri('/img/apple-touch-icon-precomposed.png'); ?>">
+    <link rel="shortcut icon" href="<?php echo twocol_base::template_uri('/assets/img/favicon.png'); ?>" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo twocol_base::template_uri('/assets/img/apple-touch-icon-precomposed.png'); ?>">
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>">
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
