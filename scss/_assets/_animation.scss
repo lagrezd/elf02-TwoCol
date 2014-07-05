@@ -2,7 +2,7 @@
     Asset: Animation
 */
 
-@keyframes logo {
-    from { background-position: -1800px; }
-    to { background-position: 0; }
+@keyframes header__bar {
+    from { transform: scaleX(0) translateY(-100%); }
+    to { transform: scaleX(1) translateY(0); }
 }

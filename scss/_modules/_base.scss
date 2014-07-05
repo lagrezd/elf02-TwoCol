@@ -12,5 +12,12 @@ body {
     font-weight: $weight__norm;
     color: $color__grey;
     background-color: $color__white;
-    border-top: 8px solid $color__red;
+
+    &:before {
+        content: '';
+        display: block;
+        height: 8px;
+        background-color: $color__red;
+        animation: header__bar .8s ease-in-out;
+    }
 }
