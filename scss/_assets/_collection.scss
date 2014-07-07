@@ -9,6 +9,10 @@
     padding: $base__spacing--half;
 }
 
+.wrap--image {
+    max-width: $wrap__max-width--image;
+}
+
 a {
     text-decoration: none;
     transition: all .2s ease-out;

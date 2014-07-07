@@ -18,6 +18,6 @@ body {
         display: block;
         height: 8px;
         background-color: $color__red;
-        animation: header__bar .8s ease-in-out;
+        animation: header__bar .8s cubic-bezier(0, .98, 1, .02);
     }
 }

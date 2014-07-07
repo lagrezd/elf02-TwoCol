@@ -17,6 +17,6 @@
     <![endif]-->
 </head>
 <body>
-    <div class="page-main wrap">
+    <div class="page-main wrap wrap--image">
         <div class="grid">
-            <div class="page-main__left col-12-8">
+            <div class="page-main__left col-12-12">

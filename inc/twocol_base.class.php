@@ -6,6 +6,14 @@
     final class twocol_base {
 
         /**
+         * Rev file handling
+         */
+        public static $css_rev_name = 'style.min.css';
+        public static $js_rev_name = 'scripts.min.js';
+
+
+
+        /**
          * Singleton
          */
         private static $instance = null;
@@ -51,6 +59,9 @@
                 11,
                 1
             );
+
+            // Image post format
+            add_theme_support('post-formats', array('image'));
         }
 
 
@@ -101,7 +112,10 @@
             // TwoCol css
             wp_register_style(
                 'twocol',
-                self::template_uri('assets/css/style.min.css'),
+                self::template_uri(sprintf('%s%s',
+                    'dist/css/',
+                    self::$css_rev_name
+                )),
                 array(),
                 null,
                 'all'
@@ -125,7 +139,10 @@
             // TwoCol js
             wp_register_script(
                 'twocol',
-                self::template_uri('assets/js/scripts.min.js'),
+                self::template_uri(sprintf('%s%s',
+                    'dist/js/',
+                    self::$js_rev_name
+                )),
                 array(),
                 null,
                 true

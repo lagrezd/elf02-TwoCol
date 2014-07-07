@@ -124,3 +124,12 @@
         @include font-size($size__xs);
     }
 }
+
+.post--image {
+    text-align: center;
+
+    > figure {
+        margin-left: 0;
+        box-shadow: none;
+    }
+}

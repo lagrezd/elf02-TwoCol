@@ -8,8 +8,21 @@ var gulp         = require('gulp'),
     jshint       = require('gulp-jshint'),
     uglify       = require('gulp-uglify'),
     notify       = require('gulp-notify'),
+    rev          = require('gulp-rev'),
+    rimraf       = require('gulp-rimraf'),
     watch        = require('gulp-watch'),
     livereload   = require('gulp-livereload');
+
+
+gulp.task('revclean-css', function() {
+    return gulp.src('./dist/css/*-*.css', { read: false })
+        .pipe(rimraf());
+});
+
+gulp.task('revclean-js', function() {
+    return gulp.src('./dist/js/*-*.js', { read: false })
+        .pipe(rimraf());
+});
 
 
 gulp.task('sass', function() {
@@ -22,17 +35,18 @@ gulp.task('sass', function() {
                 return notify().write('sass: ' + err);
             }
         }))
-        .pipe(gulp.dest('./assets/css'))
+        .pipe(gulp.dest('./dist/css'))
 
         // autoprefixer
         .pipe(rename('style.prefixed.css'))
         .pipe(autoprefixer('last 2 version', 'ie 9'))
-        .pipe(gulp.dest('./assets/css'))
+        .pipe(gulp.dest('./dist/css'))
 
         // cssmin
         .pipe(rename('style.min.css'))
         .pipe(cssmin())
-        .pipe(gulp.dest('./assets/css'));
+        .pipe(rev())
+        .pipe(gulp.dest('./dist/css'));
 });
 
 
@@ -53,7 +67,7 @@ gulp.task('js', function() {
 
         // concat
         .pipe(concat('scripts.concat.js'))
-        .pipe(gulp.dest('./assets/js'))
+        .pipe(gulp.dest('./dist/js'))
 
         // uglify
         .pipe(rename('scripts.min.js'))
@@ -63,14 +77,15 @@ gulp.task('js', function() {
             notify().write('uglify: ' + e.message);
             return this.end()
         }))
-        .pipe(gulp.dest('./assets/js'));
+        .pipe(rev())
+        .pipe(gulp.dest('./dist/js'));
 });
 
 
 gulp.task('watch', function() {
     livereload.listen();
 
-    gulp.watch('./scss/**/*.scss', ['sass']).on('change', livereload.changed);
-    gulp.watch('./js/**/*.js', ['js']).on('change', livereload.changed);;
+    gulp.watch('./scss/**/*.scss', ['revclean-css', 'sass']).on('change', livereload.changed);
+    gulp.watch('./js/**/*.js', ['revclean-js', 'js']).on('change', livereload.changed);;
     gulp.watch('./**/*.php').on('change', livereload.changed);
 });
