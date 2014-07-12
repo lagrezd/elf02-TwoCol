@@ -3,7 +3,7 @@
 */
 
 .post {
-    @include font-size($size__m);
+    @include font-size($size__m, 1.7);
     color: $color__grey;
     margin-bottom: $base__spacing * 6;
 
@@ -19,14 +19,10 @@
         }
     }
 
-    .nm {
-        margin-bottom: 0;
-    }
-
     > figure {
         box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, .4);
 
-        &.no-shadow {
+        &.shadow--off {
             box-shadow: none;
         }
     }
@@ -52,18 +48,14 @@
     }
 
     .more-link {
-        @extend %btn;
-        @include font-size($size__xs - 1);
-        margin-top: $base__spacing--half;
-        padding: .5em .8em;
-        border-radius: 4px;
-        background-color: $color__red;
-        color: $color__white;
+        @include font-size($size__m + 8, 1);
+        vertical-align: middle;
+        margin-left: 2px;
+        color: $color__red;
+        display: inline-block;
 
         &:hover {
-            background-color: $color__grey;
-            color: $color__grey--soft;
-            transform: translateX(10px);
+            transform: scaleX(1.1);
         }
     }
 
@@ -74,6 +66,10 @@
     @include breakpoint(bp-2) {
         > figure {
             margin-left: -140px;
+
+            &.mr--on {
+                margin-right: -140px;
+            }
         }
     }
 
@@ -116,20 +112,12 @@
 .post__time {
     @include font-size($size__s);
     display: block;
+    font-weight: $weight__light;
     text-align: center;
     margin-bottom: $base__spacing;
     color: $color__grey--soft;
 
     @include breakpoint(bp-3) {
         @include font-size($size__xs);
-    }
-}
-
-.post--image {
-    text-align: center;
-
-    > figure {
-        margin-left: 0;
-        box-shadow: none;
     }
 }

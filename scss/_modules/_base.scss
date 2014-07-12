@@ -11,13 +11,14 @@ body {
     @include base-font();
     font-weight: $weight__norm;
     color: $color__grey;
-    background-color: $color__white;
+    background-color: $color__bg;
 
     &:before {
         content: '';
         display: block;
         height: 8px;
+        width: 100%;
         background-color: $color__red;
-        animation: header__bar .8s cubic-bezier(0, .98, 1, .02);
+        animation: header__load .8s cubic-bezier(0, .98, 1, .02);
     }
 }

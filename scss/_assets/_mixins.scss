@@ -3,12 +3,12 @@
 */
 
 @mixin base-font() {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 @mixin font-size($size, $line: 0) {
     font-size: ($size) + px;
-    font-size: ($size / 16) + rem;
+    font-size: ($size / $base__font-size) + rem;
     @if $line != 0 {
         line-height: $line;
     }
@@ -19,7 +19,7 @@
         @media (max-width: 800px) { @content; }
     }
     @else if $point == bp-2 {
-        @media (min-width: 1200px) { @content; }
+        @media (min-width: 1260px) { @content; }
     }
     @else if $point == bp-3 {
         @media (min-width: 320px) and (max-width: 568px) { @content; }

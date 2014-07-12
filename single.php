@@ -1,6 +1,6 @@
 <?php
 
-    get_template_part('templates/header', get_post_format());
+    get_template_part('templates/header');
 
 
     if (have_posts()) :
@@ -18,6 +18,6 @@
     endif;
 
 
-    get_template_part('templates/footer', get_post_format());
+    get_template_part('templates/footer');
 
 ?>

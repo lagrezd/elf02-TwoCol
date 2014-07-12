@@ -48,31 +48,6 @@
                     'assets_loader'
                 )
             );
-
-            // Async tag for picturefill.js
-            add_filter(
-                'clean_url',
-                array(
-                    $this,
-                    'async_parsing_of_js'
-                ),
-                11,
-                1
-            );
-
-            // Image post format
-            add_theme_support('post-formats', array('image'));
-        }
-
-
-        /**
-         * Async tag for picturefill.js (dirty solution)
-         */
-        public function async_parsing_of_js($url) {
-            if(FALSE === strpos($url, '.js')) return $url;
-            // only for picturefill.js
-            if(strpos($url, 'picturefill')) return "$url' async onload='";
-            return $url;
         }
 
 
@@ -102,7 +77,7 @@
             // google font css
             wp_register_style(
                 'gf',
-                'http://fonts.googleapis.com/css?family=Ubuntu:400,300',
+                'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600',
                 array(),
                 null,
                 'all'
@@ -157,7 +132,7 @@
          */
         public static function basic_wp_seo() {
             global $post;
-            $default_keywords = 'Webentwicklung, Web Development, WordPress, Themes, Magento, Laravel, Web-Apps, iOS, php, css, html, Fotografie, Photography, Bilder, Pictures';
+            $default_keywords = 'Webentwicklung, Web Development, WordPress, Plugins, Themes, Laravel, Web-Apps, php, css, html, jQuery, js, java script, Fotografie, Photography, Bilder, Pictures';
             $output = '';
 
             // description

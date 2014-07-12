@@ -4,8 +4,9 @@
 
 // Colors
 $color__white: #fff;
+$color__bg: #f8f5f2;
 $color__red: #da4d4d;
-$color__grey: #5b5b5b;
+$color__grey: #383838;
 $color__grey--soft: #c3c3c3;
 $color__grey--light: #f7f7f7;
 
@@ -14,8 +15,7 @@ $color__dark--soft: #777;
 
 
 // Layout
-$wrap__max-width: 900px;
-$wrap__max-width--image: 1000px;
+$wrap__max-width: 1000px;
 
 
 // Typo
@@ -28,16 +28,17 @@ $size__h6: 14;
 
 $size__xl: 96;
 $size__l:  36;
-$size__m:  17;
+$size__m:  18;
 $size__s:  16;
 $size__xs: 14;
 
-$weight__bold: 400;
-$weight__norm: 300;
+$weight__bold: 600;
+$weight__norm: 400;
+$weight__light: 300;
 
-$base__font-size: 16px;
+$base__font-size: 16;
 $base__line-height: 1.5;
-$base__spacing: $base__font-size * $base__line-height;
+$base__spacing: ($base__font-size * $base__line-height) * 1px;
 $base__spacing--half: $base__spacing / 2;
 
 

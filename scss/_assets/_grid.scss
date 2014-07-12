@@ -9,16 +9,6 @@
     margin-bottom: $grid__padding;
 }
 
-.grid-pad {
-    padding-top: $grid__padding;
-    padding-bottom: $grid__padding;
-    padding-left: $grid__padding;
-
-    [class*='col-']:last-of-type {
-        padding-right: $grid__padding;
-    }
-}
-
 [class*='col-'] {
     float: left;
     padding-right: $grid__padding;
@@ -41,7 +31,7 @@
 
         .col-10-#{$i} { width: $i * 10%; }
         .col-push-10-#{$i} { left: $i * 10%; }
-        .col-pull-10-#{$i} { right: $i * 10%; }
+        //.col-pull-10-#{$i} { right: $i * 10%; }
 
     }
 
@@ -54,7 +44,7 @@
 
         .col-12-#{$i} { width: $i * 8.3333%; }
         .col-push-12-#{$i} { left: $i * 8.3333%; }
-        .col-pull-12-#{$i} { right: $i * 8.3333%; }
+        //.col-pull-12-#{$i} { right: $i * 8.3333%; }
 
     }
 
