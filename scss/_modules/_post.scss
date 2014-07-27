@@ -3,56 +3,50 @@
 */
 
 .post {
-    @include font-size($size__m, 1.7);
-    color: $color__grey;
+    @include font-size($size__m, 1.6);
+    color: $color__grey--soft;
     margin-bottom: $base__spacing * 6;
 
     &:last-of-type {
         margin-bottom: $base__spacing * 5;
     }
 
-    a {
-        color: $color__red;
-
-        &:hover {
-            color: $color__grey;
-        }
-    }
-
     > figure {
-        box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, .4);
+        box-shadow: 0px 0px 15px 0px hsla(0, 0%, 50%, .4);
 
-        &.shadow--off {
+        &.shadow--none {
             box-shadow: none;
         }
     }
 
     > pre {
-        tab-size: 4;
-        background-color: $color__dark;
-        color: $color__grey--soft;
-        padding: 5px 10px;
-        border-radius: 4px;
+        @extend %box;
+        @extend %box--grey;
 
         &,
         > code {
-            @include font-size($size__xs);
+            @include font-size($size__s - 1, 1.5);
         }
     }
 
     > blockquote {
-        @include font-size($size__s);
-        background-color: $color__grey--light;
-        padding: 5px 10px;
-        border-left: 4px solid $color__red;
+        @extend %box;
+        @extend %box--grey;
+        @include font-size($size__s, 1.5);
+
+
+        > p {
+            border-left: 5px solid $color__red;
+            padding-left: $base__spacing--half;
+        }
     }
 
     .more-link {
-        @include font-size($size__m + 8, 1);
+        @extend %btn;
+        @include font-size($size__m + 8);
         vertical-align: middle;
         margin-left: 2px;
-        color: $color__red;
-        display: inline-block;
+        padding: 0;
 
         &:hover {
             transform: scaleX(1.1);
@@ -65,11 +59,7 @@
 
     @include breakpoint(bp-2) {
         > figure {
-            margin-left: -140px;
-
-            &.mr--on {
-                margin-right: -140px;
-            }
+            margin-left: -149px;
         }
     }
 
@@ -84,6 +74,14 @@
             @include font-size($size__h3 / 1.2);
         }
 
+    }
+}
+
+.post--image {
+
+    > figure {
+        margin-left: 0;
+        box-shadow: none;
     }
 }
 
@@ -112,10 +110,10 @@
 .post__time {
     @include font-size($size__s);
     display: block;
-    font-weight: $weight__light;
+    font-weight: $weight__norm;
     text-align: center;
     margin-bottom: $base__spacing;
-    color: $color__grey--soft;
+    color: $color__grey--light;
 
     @include breakpoint(bp-3) {
         @include font-size($size__xs);

@@ -39,6 +39,7 @@
             remove_action('wp_head', 'wp_generator');
             remove_action('wp_head', 'wp_shortlink_wp_head');
             remove_action('wp_head', 'noindex', 1);
+            remove_action('wp_head', 'rel_canonical');
 
             // Custom assets loader
             add_action(
@@ -46,6 +47,18 @@
                 array(
                     $this,
                     'assets_loader'
+                )
+            );
+
+            // Thumbnail jpeg compression
+            add_filter('jpeg_quality',
+                function($arg) { return 95; }
+            );
+
+            // Image post format
+            add_theme_support('post-formats',
+                array(
+                    'image'
                 )
             );
         }
@@ -77,7 +90,7 @@
             // google font css
             wp_register_style(
                 'gf',
-                'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600',
+                'http://fonts.googleapis.com/css?family=Open+Sans:400,600',
                 array(),
                 null,
                 'all'
@@ -132,26 +145,27 @@
          */
         public static function basic_wp_seo() {
             global $post;
-            $default_keywords = 'Webentwicklung, Web Development, WordPress, Plugins, Themes, Laravel, Web-Apps, php, css, html, jQuery, js, java script, Fotografie, Photography, Bilder, Pictures';
-            $output = '';
+            $default_keywords = 'Webentwicklung, Web Development, WordPress, WooCommerce, Plugins, Themes, Laravel, Web-Apps, php, css, html, jQuery, js, Fotografie, Photography, Bilder, Pictures';
+            $default_description = 'Hallo! Mein Name ist Christopher. Ich bin Webentwickler für PHP, CSS3/HTML5, WordPress+WooCommerce und Laravel.';
+            $output = array();
 
             // description
-            $description = get_bloginfo('description', 'display');
+            $description = $default_description;
             $pagedata = get_post($post->ID);
             if(is_singular()) {
                 if(!empty($pagedata)) {
-                    $content = apply_filters('the_excerpt_rss', $pagedata->post_content);
-                    $content = substr(trim(strip_tags($content)), 0, 155);
-                    $content = preg_replace('#\n#', ' ', $content);
-                    $content = preg_replace('#\s{2,}#', ' ', $content);
-                    $content = trim($content);
+                    $description = apply_filters('the_excerpt_rss', $pagedata->post_content);
+                    $description = substr(trim(strip_tags($description)), 0, 155);
+                    $description = preg_replace('#\n#', ' ', $description);
+                    $description = preg_replace('#\s{2,}#', ' ', $description);
+                    $description = trim($description);
                 } else {
-                    $content = $description;
+                    $description = $default_description;
                 }
             } else {
-                $content = $description;
+                $description = $default_description;
             }
-            $output .= '<meta name="description" content="' . esc_attr($content) . '">' . "\n";
+            $output[] = '<meta name="description" content="' . esc_attr($description) . '">';
 
             // keywords
             $cats = get_the_category();
@@ -160,30 +174,38 @@
             if (!empty($cats)) foreach($cats as $cat) $keys .= $cat->name . ', ';
             if (!empty($tags)) foreach($tags as $tag) $keys .= $tag->name . ', ';
             $keys .= $default_keywords;
-            $output .= '<meta name="keywords" content="' . esc_attr($keys) . '">' . "\n";
+            $output[] = '<meta name="keywords" content="' . esc_attr($keys) . '">';
 
             // robots
+            $robots = '';
             if (is_category() || is_tag()) {
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 if ($paged > 1) {
-                    $output .=  '<meta name="robots" content="noindex,follow">' . "\n";
+                    $robots =  '<meta name="robots" content="noindex,follow">';
                 } else {
-                    $output .=  '<meta name="robots" content="index,follow">' . "\n";
+                    $robots =  '<meta name="robots" content="index,follow">';
                 }
             } else if (is_home() || is_singular()) {
-                $output .= '<meta name="robots" content="index,follow">' . "\n";
+                $robots = '<meta name="robots" content="index,follow">';
             } else {
-                $output .= '<meta name="robots" content="noindex,follow">' . "\n";
+                $robots = '<meta name="robots" content="noindex,follow">';
             }
+            $output[] = $robots;
 
             // title
-            $name = get_bloginfo('name', 'display');
+            $name = 'elf02 - Webentwicklung & Fotografie';
             $title = wp_title('|', false);
             $seo_title = $name . $title;
+            $output[] = '<title>' . esc_attr($seo_title) . '</title>';
 
-            $output .= '<title>' . esc_attr($seo_title) . '</title>' . "\n";
+            // canonical
+            if(is_singular()) {
+                $output[] = '<link rel="canonical" href="' . get_permalink() . '">';
+            } else if(is_front_page()) {
+                $output[] = '<link rel="canonical" href="' . get_bloginfo('url') . '">';
+            }
 
-            return $output;
+            return implode("\n", $output) . "\n";
         }
 
 

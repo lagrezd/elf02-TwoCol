@@ -8,21 +8,9 @@ var gulp         = require('gulp'),
     jshint       = require('gulp-jshint'),
     uglify       = require('gulp-uglify'),
     notify       = require('gulp-notify'),
-    rev          = require('gulp-rev'),
-    rimraf       = require('gulp-rimraf'),
     watch        = require('gulp-watch'),
     livereload   = require('gulp-livereload');
 
-
-gulp.task('revclean-css', function() {
-    return gulp.src('./dist/css/*-*.css', { read: false })
-        .pipe(rimraf());
-});
-
-gulp.task('revclean-js', function() {
-    return gulp.src('./dist/js/*-*.js', { read: false })
-        .pipe(rimraf());
-});
 
 
 gulp.task('sass', function() {
@@ -45,7 +33,6 @@ gulp.task('sass', function() {
         // cssmin
         .pipe(rename('style.min.css'))
         .pipe(cssmin())
-        .pipe(rev())
         .pipe(gulp.dest('./dist/css'));
 });
 
@@ -77,7 +64,6 @@ gulp.task('js', function() {
             notify().write('uglify: ' + e.message);
             return this.end()
         }))
-        .pipe(rev())
         .pipe(gulp.dest('./dist/js'));
 });
 
@@ -85,7 +71,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     livereload.listen();
 
-    gulp.watch('./scss/**/*.scss', ['revclean-css', 'sass']).on('change', livereload.changed);
-    gulp.watch('./js/**/*.js', ['revclean-js', 'js']).on('change', livereload.changed);;
+    gulp.watch('./scss/**/*.scss', ['sass']).on('change', livereload.changed);
+    gulp.watch('./js/**/*.js', ['js']).on('change', livereload.changed);;
     gulp.watch('./**/*.php').on('change', livereload.changed);
 });

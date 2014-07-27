@@ -3,9 +3,10 @@
 */
 
 .page-footer {
+    @extend %box--grey;
     @include font-size($size__xs);
-    background-color: $color__dark;
-    color: $color__dark--soft;
+    padding-top: $base__spacing--half;
+    padding-bottom: $base__spacing--half;
 
     a {
         color: $color__dark--soft;

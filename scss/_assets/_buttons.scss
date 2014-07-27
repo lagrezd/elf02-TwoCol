@@ -2,7 +2,6 @@
     Asset: Buttons
 */
 
-.btn,
 %btn {
     font: inherit;
     cursor: pointer;
@@ -17,5 +16,39 @@
 
     &:hover {
         text-decoration: none;
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
+.btn--twitter {
+    @include font-size($size__xs - 4);
+    font-weight: $weight__bold;
+    color: #333;
+    background-color: #F8F8F8;
+    background-image: linear-gradient(to bottom, #FFF, #DEDEDE);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    padding-left: 20px;
+
+    &:hover {
+        border-color: #BBB;
+        background-color: #F8F8F8;
+        background-image: linear-gradient(to bottom, #F8F8F8, #D9D9D9);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 13px;
+        left: 3px;
+        top: 50%;
+        margin-top: -6px;
+        background: url(https://twitter.com/favicons/favicon.ico) center 1px no-repeat;
+        background-size: 13px;
     }
 }

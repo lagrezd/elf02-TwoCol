@@ -2,8 +2,7 @@
     Asset: Nav
 */
 
-.nav,
-%nav {
+.nav {
     list-style: none;
     margin-left: 0;
 
@@ -18,8 +17,7 @@
     }
 }
 
-.nav--stacked,
-%nav--stacked {
+.nav--stacked {
 
     > li {
         display: list-item;
@@ -30,8 +28,7 @@
     }
 }
 
-.nav--fit,
-%nav--fit {
+.nav--fit {
     width: 100%;
 
     > li {

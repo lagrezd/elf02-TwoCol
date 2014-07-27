@@ -1,21 +1,15 @@
 /*
     Asset: Grid
-    @author: http://css-tricks.com/dont-overthink-it-grids/
-    @author: http://elf02.de
 */
 
 .grid {
-    @extend %clearfix;
-    margin-bottom: $grid__padding;
+    margin-left: -$grid__padding;
 }
 
 [class*='col-'] {
-    float: left;
-    padding-right: $grid__padding;
-
-    .grid &:last-of-type {
-        padding-right: 0;
-    }
+    display: inline-block;
+    padding-left: $grid__padding;
+    vertical-align: top;
 }
 
 [class*='col-push'],

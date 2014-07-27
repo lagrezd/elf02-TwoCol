@@ -3,15 +3,15 @@
 */
 
 // Colors
-$color__white: #fff;
-$color__bg: #f8f5f2;
-$color__red: #da4d4d;
-$color__grey: #383838;
-$color__grey--soft: #c3c3c3;
-$color__grey--light: #f7f7f7;
+$color__white: hsl(0, 0%, 100%);
+$color__red: hsl(0, 66%, 58%);
+$color__grey: hsl(0, 0%, 24%);
+$color__grey--soft: hsl(0, 0%, 36%);
+$color__grey--light: hsl(0, 0%, 70%);
 
-$color__dark: #333;
-$color__dark--soft: #777;
+$color__dark: hsl(0, 0%, 20%);
+$color__dark--gradient: hsl(0, 0%, 22%);
+$color__dark--soft: hsl(0, 0%, 47%);
 
 
 // Layout
@@ -34,7 +34,6 @@ $size__xs: 14;
 
 $weight__bold: 600;
 $weight__norm: 400;
-$weight__light: 300;
 
 $base__font-size: 16;
 $base__line-height: 1.5;

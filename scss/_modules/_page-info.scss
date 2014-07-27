@@ -2,36 +2,39 @@
     Module: Info
 */
 
-.page-info {
-    @include font-size($size__m, 1.7);
+$logo__size: 90px;
 
-    a {
+.page-info {
+    @include font-size($size__m, 1.6);
+    color: $color__grey--soft;
+
+    [data-tooltip] {
         color: $color__red;
+        cursor: help;
 
         &:hover {
             color: $color__grey;
         }
     }
 
-    [data-tooltip] {
-        color: $color__red;
-        cursor: help;
-    }
-
     @include breakpoint(bp-1) {
         margin-bottom: $base__spacing * 3;
+    }
+
+    @include breakpoint(bp-3) {
+        @include font-size($size__s);
     }
 }
 
 .page-info__logo {
-    background-image: url(../img/logo.jpg);
+    background-image: url(../img/chrisb.png);
     background-size: 100%;
-    width: 120px;
-    height: 120px;
+    width: $logo__size;
+    height: $logo__size;
     border-radius: 50%;
     margin-bottom: $base__spacing--half;
     border: 3px solid $color__white;
-    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, .4);
+    box-shadow: 0px 0px 1px 0px hsla(0, 0%, 30%, .8);
 
     > a {
         display: block;
@@ -40,7 +43,7 @@
     }
 
     @include breakpoint(bp-retina) {
-        background-image: url(../img/logo--2x.jpg);
+        background-image: url(../img/chrisb@2x.png);
     }
 
     @include breakpoint(bp-1) {
