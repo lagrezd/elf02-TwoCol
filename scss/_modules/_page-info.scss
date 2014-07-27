@@ -15,6 +15,10 @@
         }
     }
 
+    > p {
+        margin-bottom: $base__spacing--half;
+    }
+
     @include breakpoint(bp-1) {
         margin-bottom: $base__spacing * 3;
     }
