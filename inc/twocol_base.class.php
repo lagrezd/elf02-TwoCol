@@ -50,6 +50,15 @@
                 )
             );
 
+            // Exclude specific category from main loop
+            add_action(
+                'pre_get_posts',
+                array(
+                    $this,
+                    'exclude_specific_cats'
+                )
+            );
+
             // Thumbnail jpeg compression
             add_filter('jpeg_quality',
                 function($arg) { return 95; }
@@ -61,6 +70,17 @@
                     'image'
                 )
             );
+        }
+
+
+        /**
+         * Exclude specific category from main loop
+         */
+        public function exclude_specific_cats($wp_query) {
+            if(!is_admin() && is_main_query() && is_home()) {
+                // Pictures
+                $wp_query->set('cat', '-4,-31');
+            }
         }
 
 
