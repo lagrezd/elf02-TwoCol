@@ -4,6 +4,6 @@
     <?php get_template_part('templates/header', 'meta'); ?>
 </head>
 <body>
-    <div class="page-main wrap">
+    <main class="page-main wrap" role="main">
         <div class="grid">
             <div class="page-main__left col-12-12">

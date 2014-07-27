@@ -4,7 +4,7 @@
                 <?php get_template_part('templates/section', 'info'); ?>
             </div>
         </div>
-    </div>
+    </main>
     <footer class="page-footer">
         <?php get_template_part('templates/section', 'footer'); ?>
     </footer>
